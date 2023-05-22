@@ -12,6 +12,10 @@ saga.setup {
     split = "<C-h>",
     vsplit = "<C-s>",
   },
+  -- disable code actions
+  lightbulb = {
+    enable_in_insert = false,
+  },
   finder = {
     keys = {
       expand_or_jump = "<CR>",

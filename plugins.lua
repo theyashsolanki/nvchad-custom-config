@@ -2,9 +2,6 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-  
-  
-
 
   -- Override plugin definition options
 
@@ -37,7 +34,7 @@ local plugins = {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
+    end,
   },
 
   -- override plugin configs
@@ -92,14 +89,13 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = {
-      preselect = require("cmp").PreselectMode.None,
+      -- preselect = require("cmp").PreselectMode.None,
       experimental = {
-        ghost_text = true,
+        ghost_text = false,
       },
-      completion = {
-        -- autocomplete = false,
-        completeopt = "menu,menuone,noinsert,noselect",
-      },
+      -- completion = {
+      --   completeopt = "menu,menuone,noinsert,noselect",
+      -- },
       confirm_opts = {
         behavior = require("cmp").ConfirmBehavior.Replace,
         select = false,
@@ -113,44 +109,14 @@ local plugins = {
         ["<S-Tab>"] = function(callback)
           callback()
         end,
-        
-        
 
-        ["<C-k>"] = require("cmp").mapping.select_prev_item(),
-        ["<C-j>"] = require("cmp").mapping.select_next_item(),
-        -- ["<C-e>"] = require("cmp").mapping(require("cmp").mapping.complete() { "i", "c"}),
+        ["<C-k>"] = require("cmp").mapping.select_prev_item { behavior = require("cmp").SelectBehavior.Select },
+        ["<C-j>"] = require("cmp").mapping.select_next_item { behavior = require("cmp").SelectBehavior.Select },
         ["<CR>"] = require("cmp").mapping.confirm { select = false },
         ["<C-e>"] = require("cmp").mapping { i = require("cmp").mapping.abort(), c = require("cmp").mapping.close() },
-        
-
-    
-        -- use Up and down for cycling completion
-        ["<Down>"] = require("cmp").mapping(function(fallback)
-          local cmp = require "cmp"
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif require("luasnip").expand_or_jumpable() then
-            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }), 
-        ["<Up>"] = require("cmp").mapping(function(fallback)
-          local cmp = require "cmp"
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif require("luasnip").jumpable(-1) then
-            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
+        ["<Up>"] = require("cmp").mapping.select_prev_item { behavior = require("cmp").SelectBehavior.Select },
+        ["<Down>"] = require("cmp").mapping.select_next_item { behavior = require("cmp").SelectBehavior.Select },
+        ["<C-Space>"] = require("cmp").mapping(require("cmp").mapping.complete(), { "i", "c" }),
       },
     },
   },
@@ -159,6 +125,8 @@ local plugins = {
     "mg979/vim-visual-multi",
     branch = "master",
     lazy = false,
+    config = function()
+    end,
   },
   {
     "kevinhwang91/nvim-ufo",
@@ -201,6 +169,48 @@ local plugins = {
       end,
     },
   },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("telescope").load_extension "ui-select"
+    end,
+  },
+  -- Remove the `use` here if you're using folke/lazy.nvim.
+  {
+    "Exafunction/codeium.vim",
+    event = "InsertEnter",
+    lazy = false,
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set("i", "<C-g>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+      vim.keymap.set("i", "<c-[>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true, noremap = true })
+      vim.keymap.set("i", "<c-]>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true, noremap = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true, noremap = true })
+    end,
+  },
+
+  -- {
+  --   "folke/todo-comments.nvim",
+  --   requires = "nvim-lua/plenary.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("todo-comments").setup {
+  --       -- your configuration comes here
+  --       -- or leave it empty to use the default settings
+  --       -- refer to the configuration section below
+  --     }
+  --   end,
+  -- },
+
   -- {
   --   "shellRaining/hlchunk.nvim",
   --   lazy = false,

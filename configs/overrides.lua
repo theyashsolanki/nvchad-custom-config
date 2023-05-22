@@ -24,7 +24,7 @@ M.treesitter = {
   },
   highlight = {
     enable = true,
-  }
+  },
 }
 
 M.mason = {
@@ -40,8 +40,9 @@ M.mason = {
     "deno",
     "prettier",
     "tailwindcss-language-server",
-    "emmet-lsp",
+    "emmet-ls",
     "eslint-lsp",
+    "json-lsp",
 
     -- c/cpp stuff
     "clangd",
@@ -59,7 +60,7 @@ M.nvimtree = {
     highlight_git = true,
     icons = {
       show = {
-        git = true,
+        git = false,
       },
     },
   },
@@ -67,8 +68,18 @@ M.nvimtree = {
 
 M.nvterm = {
   terminals = {
-    shell = "powershell.exe"
-  }
+    shell = "powershell",
+    type_opts = {
+      float = {
+        relative = "editor",
+        -- row = 0.5,
+        -- col = 0.40,
+        width = 0.95,
+        height = 0.95,
+        border = "single",
+      },
+    },
+  },
 }
 
 return M

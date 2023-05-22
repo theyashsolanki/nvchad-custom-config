@@ -12,11 +12,11 @@ M.override = {
   CursorLine = {
     bg = "black2",
   },
-  ["@string"] = {
-    fg = "#08A04B",
-  },
+  -- ["@string"] = {
+  --   fg = "#08A04B",
+  -- },
   ["@string.regex"] = {
-    fg = "#08A04B",
+    fg = "green",
   },
   Function = {
     fg = "#F9B7FF",
@@ -27,56 +27,68 @@ M.override = {
   ["@function.call"] = {
     fg = "#F9B7FF",
   },
-  -- ["@keyword.function"] = {
-  --   fg = "pink"
-  -- },
-  ["@keyword.return"] = {
-    fg = "baby_pink",
-  },
-  -- -- ["@constant"] = {
-  -- --   fg = "#16F529",
+  -- -- ["@keyword.function"] = {
+  -- --   fg = "pink"
   -- -- },
-  -- ["@keyword"] = {
-  --   fg = "pink",
+  -- ["@keyword.return"] = {
+  --   fg = "baby_pink",
   -- },
-  -- ["@attribute"] = {
-  --   fg = "#C36241",
-  -- },
-  -- -- ["@constructor"] = {
-  -- --   fg = "",
+  -- -- -- ["@constant"] = {
+  -- -- --   fg = "#16F529",
+  -- -- -- },
+  -- -- ["@keyword"] = {
+  -- --   fg = "pink",
   -- -- },
+  -- -- ["@attribute"] = {
+  -- --   fg = "#C36241",
+  -- -- },
+  -- -- -- ["@constructor"] = {
+  -- -- --   fg = "",
+  -- -- -- },
   ["@property"] = {
-    fg = "nord_blue",
-    -- fg = "#A52A2A"
+    -- fg = "#5CB3FF",
+    --   -- fg = "#A52A2A"
+    fg = "#6698FF",
   },
   ["@method"] = {
-    fg = "#F9B7FF",
+    fg = "#FD349C",
   },
   ["@method.call"] = {
-    fg = "#F9B7FF",
+    fg = "#FD349C",
   },
   DiffAdded = {
     fg = "#00FF00",
   },
   DiffChange = {
-    fg = "#C36241",
+    fg = "orange",
   },
   ["@parameter"] = {
     fg = "white",
   },
   DiffAdd = {
-    fg = "#08A04B"
+    fg = "#08A04B",
   },
-  String = {
-    fg = "#08A04B"
-  }
+  ["@punctuation.special"] = {
+    fg = "#01F9C6",
+  },
+  ["@variable.builtin"] = {
+    fg = "#FD1C03",
+  },
+  ["@reference"] = {
+    fg = "#FD1C03",
+  },
+  -- ["@variable"] = {
+  --   fg = "#FDEEF4",
+  -- },
+  -- String = {
+  --   fg = "#08A04B"
+  -- }
   -- Type = {
   --   fg = "#2aa198"
   -- },
   -- Tag = {
   --   fg = "#2aa198"
   -- }
- 
 }
 
 ---@type HLTable
