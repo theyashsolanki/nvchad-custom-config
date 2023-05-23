@@ -12,9 +12,9 @@ M.override = {
   CursorLine = {
     bg = "black2",
   },
-  -- ["@string"] = {
-  --   fg = "#08A04B",
-  -- },
+  ["@string"] = {
+    fg = "green",
+  },
   ["@string.regex"] = {
     fg = "green",
   },
@@ -36,9 +36,9 @@ M.override = {
   -- -- -- ["@constant"] = {
   -- -- --   fg = "#16F529",
   -- -- -- },
-  -- -- ["@keyword"] = {
-  -- --   fg = "pink",
-  -- -- },
+  -- ["@keyword"] = {
+  --   fg = "#6AFB92",
+  -- },
   -- -- ["@attribute"] = {
   -- --   fg = "#C36241",
   -- -- },
@@ -46,33 +46,42 @@ M.override = {
   -- -- --   fg = "",
   -- -- -- },
   ["@property"] = {
-    -- fg = "#5CB3FF",
-    --   -- fg = "#A52A2A"
+    -- fg = "#6698FF",
+    --   -- fg = "#268bd2"
     fg = "#6698FF",
   },
+  ["@keyword.operator"] = {
+    fg = "#FF00FF",
+  },
+  Structure = {
+    fg = "#6AFB92",
+  },
+  -- ["@lsp.type.class"] = {
+  --   fg = "#00A36C",
+  -- },
   ["@method"] = {
-    fg = "#FD349C",
+    fg = "#F9B7FF",
   },
   ["@method.call"] = {
-    fg = "#FD349C",
+    fg = "#F9B7FF",
   },
   DiffAdded = {
-    fg = "#00FF00",
+    fg = "#08A04B",
   },
   DiffChange = {
     fg = "orange",
   },
-  ["@parameter"] = {
-    fg = "white",
-  },
+  -- ["@parameter"] = {
+  --   fg = "white",
+  -- },
   DiffAdd = {
     fg = "#08A04B",
   },
-  ["@punctuation.special"] = {
-    fg = "#01F9C6",
-  },
+  -- ["@punctuation.special"] = {
+  --   fg = "#01F9C6",
+  -- },
   ["@variable.builtin"] = {
-    fg = "#FD1C03",
+    fg = "#dc322f",
   },
   ["@reference"] = {
     fg = "#FD1C03",
