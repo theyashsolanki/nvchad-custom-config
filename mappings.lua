@@ -5,6 +5,13 @@ M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-c>"] = { "<ESC>" },
+  -- toggle transparency
+    ["<leader>tt"] = {
+      function()
+        require("base46").toggle_transparency()
+      end,
+      "toggle transparency",
+    },
   },
   v = {
     ["K"] = { ":m '<-2<CR>gv-gv" },
