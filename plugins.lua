@@ -198,6 +198,15 @@ local plugins = {
     end,
   },
 
+  {
+    "RRethy/vim-illuminate",
+    lazy = false,
+    config = function()
+      require "custom.configs.illuminate"
+    end,
+  },
+  
+
   -- {
   --   "folke/todo-comments.nvim",
   --   requires = "nvim-lua/plenary.nvim",
