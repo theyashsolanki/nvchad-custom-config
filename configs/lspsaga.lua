@@ -12,7 +12,7 @@ saga.setup {
     split = "<C-h>",
     vsplit = "<C-s>",
   },
-  -- disable code actions
+  -- disable lightbulb
   lightbulb = {
     enable_in_insert = false,
   },

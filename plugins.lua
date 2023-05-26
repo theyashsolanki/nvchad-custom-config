@@ -122,13 +122,6 @@ local plugins = {
   },
 
   {
-    "mg979/vim-visual-multi",
-    branch = "master",
-    lazy = false,
-    config = function()
-    end,
-  },
-  {
     "kevinhwang91/nvim-ufo",
     event = { "User AstroFile", "InsertEnter" },
     dependencies = { "kevinhwang91/promise-async" },

@@ -47,26 +47,5 @@ M.UndotreeToggle = {
   },
 }
 
--- M.telescope = {
---   -- add new mapping for vertical split
---   n = {
---     ["<leader>f"] = {
---       
---     }
---   }
--- }
-
--- M.nvterm = {
---   n = {
---     ["<leader>lg"] = {
---       function()
---         require("nvterm.terminal").send("lazygit", "float")
---         vim.defer_fn(function()
---           vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "", true)
---         end, 5000)
---       end,
---     },
---   },
--- }
 
 return M
