@@ -32,7 +32,7 @@ M.override = {
   },
 
   ["@property"] = {
-    fg = "#6698FF",
+    fg = "#569cd6",
   },
   ["@keyword.operator"] = {
     fg = "#f92672",
@@ -51,26 +51,56 @@ M.override = {
     fg = "orange",
   },
   ["@parameter"] = {
-    fg = "white",
+    fg = "blue",
   },
   DiffAdd = {
     fg = "#08A04B",
   },
 
   ["@variable.builtin"] = {
-    fg = "#dc322f",
+    fg = "#f92672",
   },
 
   ["@variable"] = {
-    fg = "nord_blue",
+    -- fg = "#569cd6",
+    fg = "#9cdcfe"
   },
-  DiagnosticError = {
-    fg = "#dc322f",
-    bg = "#233745",
-  },
-  DiagnosticHint = {
+  Structure = {
     fg = "#1abc9c",
   },
+  DiagnosticError = {
+    fg = "#FF0000",
+  },
+  DiagnosticHint = {
+    fg = "#808080",
+  },
+  Include = {
+    fg = "nord_blue",
+  },
+  -- ["@exception"] = {
+  --   fg = "#FF00FF",
+  -- },
+  ["@namespace"] = {
+    fg = "#1abc9c",
+  },
+  ["@punctuation.delimiter"] = {
+    fg = "white",
+  },
+  ["@punctuation.bracket"] = {
+    fg = "#FFA500",
+  },
+  ["@operator"] = {
+    fg = "#F8F6F0",
+  },
+  Constant = {
+    fg = "#f92672",
+  },
+  ["@constructor"] = {
+    fg = "#1abc9c",
+  },
+  Type = {
+    fg = "#1abc9c",
+  }
 }
 
 ---@type HLTable
