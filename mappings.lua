@@ -3,8 +3,8 @@ local M = {}
 
 M.general = {
   n = {
-    -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-c>"] = { "<ESC>" },
+    ["x"] = { '"_x'},
   -- toggle transparency
     ["<leader>tt"] = {
       function()
@@ -14,6 +14,7 @@ M.general = {
     },
   },
   v = {
+    ["D"] = { '"_d'},
     ["K"] = { ":m '<-2<CR>gv=gv" },
     ["J"] = { ":m '>+1<CR>gv=gv" },
   },
@@ -30,8 +31,11 @@ M.lspconfig = {
     ["gf"] = { "<cmd>Lspsaga lsp_finder<CR>" },
     ["<leader>o"] = { "<cmd>Lspsaga outline<CR>" },
     ["K"] = { "<cmd>Lspsaga hover_doc<CR>" },
-    -- ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
+    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
     ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
+  },
+  v = {
+      ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
   },
 }
 
@@ -44,6 +48,12 @@ M.gitsigns = {
 M.UndotreeToggle = {
   n = {
     ["<leader>u"] = { "<cmd>UndotreeToggle<CR>", "UndotreeToggle" },
+  },
+}
+
+M.fugitive = {
+  n = {
+    ["<leader>gs"] = { "<cmd>Git<CR>", "Git" },
   },
 }
 
