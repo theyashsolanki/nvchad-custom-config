@@ -33,4 +33,14 @@ saga.setup {
       normal_bg = "#022746",
     },
   },
+  code_action = {
+    num_shortcut = true,
+    show_server_name = true,
+    extend_gitsigns = true,
+    keys = {
+      -- string | table type
+      quit = "q",
+      exec = "<CR>",
+    },
+  },
 }
