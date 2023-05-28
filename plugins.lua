@@ -62,6 +62,11 @@ local plugins = {
     opts = overrides.nvterm,
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.blankline,
+  },
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",
@@ -88,37 +93,7 @@ local plugins = {
 
   {
     "hrsh7th/nvim-cmp",
-    opts = {
-      -- preselect = require("cmp").PreselectMode.None,
-      experimental = {
-        ghost_text = false,
-      },
-      -- completion = {
-      --   completeopt = "menu,menuone,noinsert,noselect",
-      -- },
-      confirm_opts = {
-        behavior = require("cmp").ConfirmBehavior.Replace,
-        select = false,
-      },
-      mapping = {
-        -- disable  tab
-        ["<Tab>"] = function(callback)
-          callback()
-        end,
-
-        ["<S-Tab>"] = function(callback)
-          callback()
-        end,
-
-        ["<C-k>"] = require("cmp").mapping.select_prev_item { behavior = require("cmp").SelectBehavior.Select },
-        ["<C-j>"] = require("cmp").mapping.select_next_item { behavior = require("cmp").SelectBehavior.Select },
-        ["<CR>"] = require("cmp").mapping.confirm { select = false },
-        ["<C-e>"] = require("cmp").mapping { i = require("cmp").mapping.abort(), c = require("cmp").mapping.close() },
-        ["<Up>"] = require("cmp").mapping.select_prev_item { behavior = require("cmp").SelectBehavior.Select },
-        ["<Down>"] = require("cmp").mapping.select_next_item { behavior = require("cmp").SelectBehavior.Select },
-        ["<C-Space>"] = require("cmp").mapping(require("cmp").mapping.complete(), { "i", "c" }),
-      },
-    },
+    opts = overrides.cmp,
   },
 
   {
@@ -169,7 +144,7 @@ local plugins = {
       require("telescope").load_extension "ui-select"
     end,
   },
-  -- Remove the `use` here if you're using folke/lazy.nvim.
+  
   {
     "Exafunction/codeium.vim",
     event = "InsertEnter",
@@ -198,8 +173,32 @@ local plugins = {
       require "custom.configs.illuminate"
     end,
   },
-  
 
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+    config = function() end,
+  },
+
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require("neoscroll").setup {
+  --       -- All these keys will be mapped to their corresponding default scrolling animation
+  --       mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+  --       hide_cursor = true,          -- Hide cursor while scrolling
+  --       stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+  --       respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+  --       cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+  --       easing_function = nil,       -- Default easing function
+  --       pre_hook = nil,              -- Function to run before the scrolling animation starts
+  --       post_hook = nil,             -- Function to run after the scrolling animation ends
+  --       performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+  --     }
+  --   end,
+  -- },
+  -- add debugger for javascript and typescript
   -- {
   --   "folke/todo-comments.nvim",
   --   requires = "nvim-lua/plenary.nvim",
@@ -237,4 +236,5 @@ local plugins = {
   -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
 }
 
+-- { "mg979/vim-visual-multi", branch = "master", lazy = false, config = function() end, },
 return plugins
