@@ -69,7 +69,7 @@ M.nvimtree = {
 
 M.nvterm = {
   terminals = {
-    shell = "powershell",
+    shell = "bash.exe",
     type_opts = {
       float = {
         relative = "editor",
@@ -84,7 +84,8 @@ M.nvterm = {
 }
 
 M.blankline = {
-  show_current_context = false,
+  show_current_context = true,
+  show_current_context_start = false,
 }
 
 M.cmp = {
