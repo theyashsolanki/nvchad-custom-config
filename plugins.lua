@@ -144,7 +144,7 @@ local plugins = {
       require("telescope").load_extension "ui-select"
     end,
   },
-  
+
   {
     "Exafunction/codeium.vim",
     event = "InsertEnter",
@@ -179,7 +179,14 @@ local plugins = {
     lazy = false,
     config = function() end,
   },
-
+  {
+    "mrjones2014/smart-splits.nvim",
+    -- version = "^1",
+    -- optional = true,
+    config = function()
+      require("smart-splits").setup()
+    end,
+  },
   -- {
   --   "karb94/neoscroll.nvim",
   --   lazy = false,
