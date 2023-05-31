@@ -12,6 +12,9 @@ M.override = {
   CursorLine = {
     bg = "black2",
   },
+  -- TermCursor = {
+  --   bg = "blue"
+  -- },
   ["@string"] = {
     fg = "green",
   },
@@ -84,16 +87,13 @@ M.override = {
     fg = "#1abc9c",
   },
   ["@punctuation.delimiter"] = {
-    fg = "white",
+    fg = "#eb6f92"
   },
   ["@punctuation.bracket"] = {
-    fg = "#FFA500",
+    fg = "white",
   },
   ["@operator"] = {
-    fg = "#F8F6F0",
-  },
-  Constant = {
-    fg = "#f92672",
+    fg = "#eb6f92",
   },
   ["@constructor"] = {
     fg = "#1abc9c",
