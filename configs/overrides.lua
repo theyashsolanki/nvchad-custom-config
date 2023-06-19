@@ -13,6 +13,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "json",
+    "bash"
   },
   indent = {
     enable = true,
@@ -44,6 +45,11 @@ M.mason = {
     "emmet-ls",
     "eslint-lsp",
     "json-lsp",
+
+    -- shell stuff
+    "bash-language-server",
+    "shellcheck",
+    "beautysh",
 
     -- c/cpp stuff
     "clangd",

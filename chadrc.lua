@@ -8,7 +8,7 @@ M.ui = {
   theme = "onedark",
   theme_toggle = { "onedark", "onedark" },
   transparency = true,
-  lsp_semantic_tokens = false,
+  lsp_semantic_tokens = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
   -- change cursor color
