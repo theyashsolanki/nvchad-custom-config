@@ -187,6 +187,19 @@ local plugins = {
       require("smart-splits").setup()
     end,
   },
+
+  {
+    'christoomey/vim-tmux-navigator',
+    lazy = false,
+    config = function()
+      vim.g.tmux_navigator_no_mappings = 1
+    end,
+  },
+
+  {
+    "tpope/vim-obsession",
+    lazy = false,
+  }
   -- {
   --   "karb94/neoscroll.nvim",
   --   lazy = false,
