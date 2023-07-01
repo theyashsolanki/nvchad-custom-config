@@ -22,30 +22,30 @@ M.override = {
     fg = "green",
   },
   Function = {
-    fg = "#F9B7FF",
+    fg = "#FF69B4",
   },
   ["@function"] = {
-    fg = "#F9B7FF",
+    fg = "#f692ce",
   },
   ["@function.call"] = {
-    fg = "#F9B7FF",
+    fg = "#f692ce",
   },
-  ["@keyword"] = {
-    fg = "#f92672",
-  },
+  -- ["@keyword"] = {
+  --   fg = "#f92672",
+  -- },
 
   ["@property"] = {
-    fg = "#569cd6",
+    fg = "blue",
   },
-  ["@keyword.operator"] = {
-    fg = "#f92672",
-  },
+  -- ["@keyword.operator"] = {
+  --   fg = "#f92672",
+  -- },
 
   ["@method"] = {
-    fg = "#F9B7FF",
+    fg = "blue",
   },
   ["@method.call"] = {
-    fg = "#F9B7FF",
+    fg = "blue",
   },
   DiffAdded = {
     fg = "#08A04B",
@@ -54,52 +54,58 @@ M.override = {
     fg = "orange",
   },
   ["@parameter"] = {
-    fg = "blue",
+    fg = "yellow",
   },
   DiffAdd = {
     fg = "#08A04B",
   },
 
-  ["@variable.builtin"] = {
-    fg = "#f92672",
-  },
-
-  ["@variable"] = {
-    -- fg = "#569cd6",
-    fg = "#9cdcfe"
-  },
+  -- ["@variable.builtin"] = {
+  --   fg = "#f92672",
+  -- },
+  --
+  -- ["@variable"] = {
+  --   fg = "#569cd6",
+  --   -- fg = "#9cdcfe"
+  -- },
   Structure = {
     fg = "#1abc9c",
   },
   DiagnosticError = {
     fg = "#FF0000",
   },
-  DiagnosticHint = {
-    fg = "#808080",
-  },
-  Include = {
-    fg = "nord_blue",
-  },
-  -- ["@exception"] = {
-  --   fg = "#FF00FF",
+  -- DiagnosticHint = {
+  --   fg = "#808080",
   -- },
-  ["@namespace"] = {
-    fg = "#1abc9c",
-  },
-  ["@punctuation.delimiter"] = {
-    fg = "#eb6f92"
-  },
+  -- Include = {
+  --   fg = "nord_blue",
+  -- },
+  -- -- ["@exception"] = {
+  -- --   fg = "purple"
+  -- -- },
+  -- ["@namespace"] = {
+  --   fg = "#1abc9c",
+  -- },
+  -- ["@punctuation.delimiter"] = {
+  --   fg = "#eb6f92"
+  -- },
   ["@punctuation.bracket"] = {
     fg = "white",
   },
-  ["@operator"] = {
-    fg = "#eb6f92",
+  ["@constant"] = {
+    fg = "white",
   },
+  -- ["@operator"] = {
+  --   fg = "#eb6f92",
+  -- },
   ["@constructor"] = {
     fg = "#1abc9c",
   },
   Type = {
     fg = "#1abc9c",
+  },
+  Repeat = {
+    fg = "#9cdcfe",
   }
 }
 
