@@ -55,12 +55,12 @@ M.lspconfig = {
     ["gf"] = { "<cmd>Lspsaga lsp_finder<CR>" },
     ["<leader>o"] = { "<cmd>Lspsaga outline<CR>" },
     ["K"] = { "<cmd>Lspsaga hover_doc<CR>" },
-    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
+    -- ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
     ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
   },
-  v = {
-    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
-  },
+  -- v = {
+  --   ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
+  -- },
 }
 
 M.gitsigns = {
