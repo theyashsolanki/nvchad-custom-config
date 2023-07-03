@@ -21,14 +21,14 @@ M.override = {
   ["@string.regex"] = {
     fg = "green",
   },
-  Function = {
-    fg = "#FF69B4",
-  },
+  -- Function = {
+  --   fg = "#FF69B4",
+  -- },
   ["@function"] = {
-    fg = "#f692ce",
+    fg = "pink",
   },
   ["@function.call"] = {
-    fg = "#f692ce",
+    fg = "pink",
   },
   -- ["@keyword"] = {
   --   fg = "#f92672",
@@ -41,12 +41,12 @@ M.override = {
   --   fg = "#f92672",
   -- },
 
-  ["@method"] = {
-    fg = "blue",
-  },
-  ["@method.call"] = {
-    fg = "blue",
-  },
+  -- ["@method"] = {
+  --   fg = "#f692ce",
+  -- },
+  -- ["@method.call"] = {
+  --   fg = "#f692ce",
+  -- },
   DiffAdded = {
     fg = "#08A04B",
   },
@@ -54,20 +54,20 @@ M.override = {
     fg = "orange",
   },
   ["@parameter"] = {
-    fg = "yellow",
+    fg = "blue",
   },
   DiffAdd = {
     fg = "#08A04B",
   },
 
-  -- ["@variable.builtin"] = {
-  --   fg = "#f92672",
-  -- },
+  ["@variable.builtin"] = {
+    fg = "#f92672",
+  },
   --
-  -- ["@variable"] = {
-  --   fg = "#569cd6",
-  --   -- fg = "#9cdcfe"
-  -- },
+  ["@variable"] = {
+    fg = "teal",
+    -- fg = "#9cdcfe"
+  },
   Structure = {
     fg = "#1abc9c",
   },
@@ -80,9 +80,9 @@ M.override = {
   -- Include = {
   --   fg = "nord_blue",
   -- },
-  -- -- ["@exception"] = {
-  -- --   fg = "purple"
-  -- -- },
+  ["@exception"] = {
+    fg = "red"
+  },
   -- ["@namespace"] = {
   --   fg = "#1abc9c",
   -- },
@@ -106,6 +106,9 @@ M.override = {
   },
   Repeat = {
     fg = "#9cdcfe",
+  },
+  IncSearch = {
+    bg = "purple",
   }
 }
 
