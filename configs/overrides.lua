@@ -55,6 +55,11 @@ M.mason = {
     "clangd",
     "clang-format",
   },
+  ui = {
+    keymaps = {
+      apply_language_filter = "F"
+    }
+  }
 }
 
 -- git support in nvimtree
