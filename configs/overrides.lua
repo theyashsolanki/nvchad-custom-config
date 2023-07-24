@@ -14,6 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "json",
     "bash"
+    "python",
   },
   indent = {
     enable = true,
@@ -54,6 +55,13 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- python stuff
+    "pyright",
+    "mypy",
+    "ruff",
+    "black",
+    "debugpy",
   },
   ui = {
     keymaps = {
