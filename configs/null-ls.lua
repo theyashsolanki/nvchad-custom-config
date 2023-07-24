@@ -28,6 +28,9 @@ local sources = {
   b.diagnostics.mypy,
   b.diagnostics.ruff,
 
+  -- golang
+  b.formatting.gofumpt,
+  b.formatting.goimports_reviser,
 }
 
 null_ls.setup {

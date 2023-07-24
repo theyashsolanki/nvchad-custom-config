@@ -13,8 +13,9 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "json",
-    "bash"
+    "bash",
     "python",
+    "go",
   },
   indent = {
     enable = true,
@@ -62,12 +63,15 @@ M.mason = {
     "ruff",
     "black",
     "debugpy",
+
+    -- Golang
+    "gopls",
   },
   ui = {
     keymaps = {
-      apply_language_filter = "F"
-    }
-  }
+      apply_language_filter = "F",
+    },
+  },
 }
 
 -- git support in nvimtree
