@@ -58,11 +58,10 @@ M.mason = {
     "clang-format",
 
     -- python stuff
-    "pyright",
+    "jedi-language-server",
     "mypy",
     "ruff",
     "black",
-    "debugpy",
 
     -- Golang
     "gopls",
