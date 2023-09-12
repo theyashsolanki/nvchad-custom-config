@@ -1,8 +1,3 @@
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-  return
-end
-
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
@@ -10,7 +5,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "tailwindcss", "jsonls", "bashls", "jedi_language_server" }
+local servers = { "html", "cssls", "tsserver", "tailwindcss", "jsonls", "bashls", "pyright" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -33,14 +28,6 @@ lspconfig["clangd"].setup {
   },
 }
 
--- typescript setup additional
-typescript.setup {
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
-}
-
 lspconfig["emmet_ls"].setup {
   capabilities = capabilities,
   on_attach = on_attach,
@@ -55,7 +42,7 @@ lspconfig["gopls"].setup {
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
-      completionUnimported = true,
+      -- completionUnimported = true,
       usePlaceholders = true,
       analyses = {
         unusedparams = true,
