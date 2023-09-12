@@ -12,6 +12,12 @@ M.override = {
   CursorLine = {
     bg = "black2",
   },
+  CursorLineNr = {
+    fg = "blue",
+  },
+  LineNr = {
+    fg = "dark_purple",
+  },
   -- TermCursor = {
   --   bg = "blue"
   -- },
@@ -22,14 +28,14 @@ M.override = {
     fg = "green",
   },
   -- Function = {
-  --   fg = "#FF69B4",
+  --   fg = "pink",
   -- },
-  ["@function"] = {
-    fg = "pink",
-  },
-  ["@function.call"] = {
-    fg = "pink",
-  },
+  -- ["@function"] = {
+  --   fg = "pink",
+  -- },
+  -- ["@function.call"] = {
+  --   fg = "pink",
+  -- },
   -- ["@keyword"] = {
   --   fg = "#f92672",
   -- },
@@ -54,62 +60,62 @@ M.override = {
     fg = "orange",
   },
   ["@parameter"] = {
-    fg = "blue",
+    fg = "white",
   },
   DiffAdd = {
     fg = "#08A04B",
   },
-
-  ["@variable.builtin"] = {
-    fg = "#f92672",
-  },
   --
-  ["@variable"] = {
-    fg = "teal",
-    -- fg = "#9cdcfe"
-  },
-  Structure = {
-    fg = "#1abc9c",
-  },
-  DiagnosticError = {
-    fg = "#FF0000",
-  },
-  -- DiagnosticHint = {
-  --   fg = "#808080",
+  -- ["@variable.builtin"] = {
+  --   fg = "#f92672",
   -- },
-  -- Include = {
-  --   fg = "nord_blue",
+  -- --
+  -- ["@variable"] = {
+  --   fg = "teal",
+  --   -- fg = "#9cdcfe"
   -- },
-  ["@exception"] = {
-    fg = "red"
-  },
-  -- ["@namespace"] = {
+  -- Structure = {
   --   fg = "#1abc9c",
   -- },
-  -- ["@punctuation.delimiter"] = {
-  --   fg = "#eb6f92"
+  -- DiagnosticError = {
+  --   fg = "#FF0000",
   -- },
+  -- -- DiagnosticHint = {
+  -- --   fg = "#808080",
+  -- -- },
+  -- -- Include = {
+  -- --   fg = "nord_blue",
+  -- -- },
+  -- ["@exception"] = {
+  --   fg = "red"
+  -- },
+  -- -- ["@namespace"] = {
+  -- --   fg = "#1abc9c",
+  -- -- },
+  -- -- ["@punctuation.delimiter"] = {
+  -- --   fg = "#eb6f92"
+  -- -- },
   ["@punctuation.bracket"] = {
     fg = "white",
   },
-  ["@constant"] = {
-    fg = "white",
-  },
-  -- ["@operator"] = {
-  --   fg = "#eb6f92",
+  -- ["@constant"] = {
+  --   fg = "white",
   -- },
-  ["@constructor"] = {
-    fg = "#1abc9c",
-  },
-  Type = {
-    fg = "#1abc9c",
-  },
-  Repeat = {
-    fg = "#9cdcfe",
-  },
-  IncSearch = {
-    bg = "purple",
-  }
+  -- -- ["@operator"] = {
+  -- --   fg = "#eb6f92",
+  -- -- },
+  -- ["@constructor"] = {
+  --   fg = "#1abc9c",
+  -- },
+  -- Type = {
+  --   fg = "#1abc9c",
+  -- },
+  -- Repeat = {
+  --   fg = "#9cdcfe",
+  -- },
+  -- IncSearch = {
+  --   bg = "purple",
+  -- }
 }
 
 ---@type HLTable

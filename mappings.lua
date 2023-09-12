@@ -47,20 +47,17 @@ M.general = {
 -- more keybinds!
 M.lspconfig = {
   n = {
-    ["<leader>rf"] = { ":TypescriptRenameFile<CR>", "rename ts file lspsaga" },
+    -- ["<leader>rf"] = { ":TypescriptRenameFile<CR>", "rename ts file lspsaga" },
     ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", "peek_definition lspsaga" },
-    ["<leader>ra"] = { "<cmd>Lspsaga rename<CR>" },
+    ["<leader>ra"] = { "<cmd>Lspsaga rename<CR>", "lspsaga rename" },
     ["<leader>D"] = { "<cmd>Lspsaga show_line_diagnostics<CR>" },
     ["<leader>d"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
-    ["gf"] = { "<cmd>Lspsaga lsp_finder<CR>" },
-    ["<leader>o"] = { "<cmd>Lspsaga outline<CR>" },
+    ["gf"] = { "<cmd>Lspsaga finder<CR>", "lspsaga finder" },
+    ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "lspsaga outline" },
     ["K"] = { "<cmd>Lspsaga hover_doc<CR>" },
-    -- ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
-    ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
+    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
+    -- ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
   },
-  -- v = {
-  --   ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
-  -- },
 }
 
 M.gitsigns = {
@@ -91,6 +88,5 @@ M.nvimtree = {
     },
   },
 }
-
 
 return M
