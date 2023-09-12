@@ -4,43 +4,25 @@ if not saga_status then
 end
 
 saga.setup {
-  -- keybinds for navigation in lspsaga window
-  scroll_preview = { scroll_down = "<C-j>", scroll_up = "<C-k>" },
-  -- use enter to open file with definition preview
-  definition = {
-    edit = "<CR>",
-    split = "<C-h>",
-    vsplit = "<C-s>",
-  },
-  -- disable lightbulb
-  lightbulb = {
-    enable_in_insert = false,
-  },
-  finder = {
-    keys = {
-      expand_or_jump = "<CR>",
-      split = "<C-h>",
-      vsplit = "<C-s>",
-    },
-  },
-  outline = {
-    keys = {
-      expand_or_jump = "<CR>",
-    },
-  },
   ui = {
-    colors = {
-      normal_bg = "#022746",
-    },
+    -- skull icon
+    code_action = " 󰚌",
   },
   code_action = {
-    num_shortcut = true,
-    show_server_name = true,
-    extend_gitsigns = true,
+    extend_gitsigns = false,
+  },
+  callhierarchy = {
+    layout = "float",
+  },
+  outline = {
+    -- layout = "float",
     keys = {
-      -- string | table type
-      quit = "q",
-      exec = "<CR>",
+      toggle_or_jump = "<CR>",
+    },
+  },
+  rename = {
+    keys = {
+      quit = "<C-c>",
     },
   },
 }

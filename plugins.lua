@@ -16,20 +16,20 @@ local plugins = {
         end,
       },
       {
-        "glepnir/lspsaga.nvim",
-        branch = "main",
+        "nvimdev/lspsaga.nvim",
+        -- branch = "main",
         event = "LspAttach",
         config = function()
           require "custom.configs.lspsaga"
         end,
         dependencies = { { "nvim-tree/nvim-web-devicons" } },
       },
-      {
-        "jose-elias-alvarez/typescript.nvim",
-        config = function()
-          require "custom.configs.lspconfig"
-        end,
-      },
+      -- {
+      --   "jose-elias-alvarez/typescript.nvim",
+      --   config = function()
+      --     require "custom.configs.lspconfig"
+      --   end,
+      -- },
     },
     config = function()
       require "plugins.configs.lspconfig"
@@ -124,16 +124,16 @@ local plugins = {
         end
 
         return (filetype == "" or buftype == "nofile") and "indent" -- only use indent until a file is opened
-            or function(bufnr)
-              return require("ufo")
-                  .getFolds(bufnr, "lsp")
-                  :catch(function(err)
-                    return handleFallbackException(bufnr, err, "treesitter")
-                  end)
-                  :catch(function(err)
-                    return handleFallbackException(bufnr, err, "indent")
-                  end)
-            end
+          or function(bufnr)
+            return require("ufo")
+              .getFolds(bufnr, "lsp")
+              :catch(function(err)
+                return handleFallbackException(bufnr, err, "treesitter")
+              end)
+              :catch(function(err)
+                return handleFallbackException(bufnr, err, "indent")
+              end)
+          end
       end,
     },
   },
@@ -189,7 +189,7 @@ local plugins = {
   },
 
   {
-    'christoomey/vim-tmux-navigator',
+    "christoomey/vim-tmux-navigator",
     lazy = false,
     config = function()
       vim.g.tmux_navigator_no_mappings = 1
@@ -199,7 +199,7 @@ local plugins = {
   {
     "tpope/vim-obsession",
     lazy = false,
-  }
+  },
   -- {
   --   "karb94/neoscroll.nvim",
   --   lazy = false,
