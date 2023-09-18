@@ -66,7 +66,7 @@ M.mason = {
     -- Golang
     "gopls",
     "gofumpt",
-    "goimports_reviser",
+    "goimports-reviser",
   },
   ui = {
     keymaps = {
