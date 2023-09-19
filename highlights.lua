@@ -13,11 +13,11 @@ M.override = {
     bg = "black2",
   },
   CursorLineNr = {
-    fg = "blue",
-  },
-  LineNr = {
     fg = "dark_purple",
   },
+  -- LineNr = {
+  --   fg = "dark_purple",
+  -- },
   -- TermCursor = {
   --   bg = "blue"
   -- },
@@ -110,12 +110,12 @@ M.override = {
   -- Type = {
   --   fg = "#1abc9c",
   -- },
-  -- Repeat = {
-  --   fg = "#9cdcfe",
-  -- },
-  -- IncSearch = {
-  --   bg = "purple",
-  -- }
+  Repeat = {
+    fg = "pink",
+  },
+  IncSearch = {
+    bg = "purple",
+  },
 }
 
 ---@type HLTable
