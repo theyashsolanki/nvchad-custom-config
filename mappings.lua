@@ -47,12 +47,11 @@ M.general = {
 -- more keybinds!
 M.lspconfig = {
   n = {
-    -- ["<leader>rf"] = { ":TypescriptRenameFile<CR>", "rename ts file lspsaga" },
     ["gD"] = { "<cmd>Lspsaga peek_definition<CR>", "peek_definition lspsaga" },
     ["<leader>ra"] = { "<cmd>Lspsaga rename<CR>", "lspsaga rename" },
-    ["<leader>D"] = { "<cmd>Lspsaga show_line_diagnostics<CR>" },
-    ["<leader>d"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
-    ["gf"] = { "<cmd>Lspsaga finder<CR>", "lspsaga finder" },
+    ["<leader>d"] = { "<cmd>Lspsaga show_line_diagnostics<CR>" },
+    ["<leader>D"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
+    ["gr"] = { "<cmd>Lspsaga finder<CR>", "lspsaga refrences" },
     ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "lspsaga outline" },
     ["K"] = { "<cmd>Lspsaga hover_doc<CR>" },
     ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
