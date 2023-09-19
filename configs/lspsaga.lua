@@ -6,7 +6,8 @@ end
 saga.setup {
   ui = {
     -- skull icon
-    code_action = " 󰚌",
+    code_action = "",
+    devicon = true,
   },
   code_action = {
     extend_gitsigns = false,
