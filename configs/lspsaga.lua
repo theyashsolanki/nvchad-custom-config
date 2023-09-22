@@ -6,11 +6,12 @@ end
 saga.setup {
   ui = {
     -- skull icon
-    code_action = "",
+    code_action = " 󰚌",
     devicon = true,
   },
   code_action = {
     extend_gitsigns = false,
+    enable_in_insert = false,
   },
   callhierarchy = {
     layout = "float",
@@ -20,6 +21,9 @@ saga.setup {
     keys = {
       toggle_or_jump = "<CR>",
     },
+  },
+  lightbulb = {
+    enable_in_insert = false,
   },
   rename = {
     keys = {
