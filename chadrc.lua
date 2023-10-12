@@ -11,11 +11,13 @@ M.ui = {
   lsp_semantic_tokens = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
-  -- change cursor color
+
+  -- indent line
   vim.cmd [[highlight IndentBlanklineContextChar guifg=#9D7CD8 gui=nocombine]],
   vim.cmd "hi def IlluminatedWordText guibg=#2E3440 gui=NONE",
   vim.cmd "hi def IlluminatedWordWrite gui=NONE guibg=#2E3440",
   vim.cmd "hi def IlluminatedWordRead gui=NONE guibg=#2E3440",
+
   -- highlight yanked text
   vim.cmd [[
   augroup YankHighlight
