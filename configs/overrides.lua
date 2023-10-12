@@ -59,7 +59,7 @@ M.mason = {
     "codelldb",
 
     -- python stuff
-    "jedi-language-server",
+    "pyright",
     "mypy",
     "ruff",
     "black",
