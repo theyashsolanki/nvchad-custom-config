@@ -56,6 +56,32 @@ M.lspconfig = {
     ["K"] = { "<cmd>Lspsaga hover_doc<CR>" },
     ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
     -- ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
+    ["<leader>hh"] = {
+      function()
+        vim.lsp.inlay_hint(0, nil)
+      end,
+      "Toggle Inlay Hints",
+    },
+  },
+}
+
+M.telescope = {
+  n = {
+    --   ["<C-j>"] = {
+    --     function()
+    --       require("telescope.actions").move_selection_next()
+    --     end,
+    --   },
+    --   ["<C-l"] = {
+    --     function()
+    --       require("telescope.actions").preview_scrolling_right()
+    --     end,
+    --   },
+    --   ["<C-k>"] = {
+    --     function()
+    --       require("telescope.actions").move_selection_previous()
+    --     end,
+    --   },
   },
 }
 
