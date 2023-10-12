@@ -134,11 +134,6 @@ local plugins = {
   },
 
   {
-    "tpope/vim-fugitive",
-    lazy = false,
-    config = function() end,
-  },
-  {
     "mrjones2014/smart-splits.nvim",
     -- version = "^1",
     -- optional = true,
@@ -196,6 +191,35 @@ local plugins = {
     "mfussenegger/nvim-dap",
     config = function()
       require("core.utils").load_mappings "dap"
+    end,
+  },
+
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- This module contains a number of default definitions
+      local rainbow_delimiters = require "rainbow-delimiters"
+
+      vim.g.rainbow_delimiters = {
+        strategy = {
+          [""] = rainbow_delimiters.strategy["global"],
+          vim = rainbow_delimiters.strategy["local"],
+        },
+        query = {
+          [""] = "rainbow-delimiters",
+          lua = "rainbow-blocks",
+        },
+        highlight = {
+          "RainbowDelimiterWhite",
+          "RainbowDelimiterYellow",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterOrange",
+          "RainbowDelimiterGreen",
+          "RainbowDelimiterViolet",
+          "RainbowDelimiterCyan",
+        },
+      }
     end,
   },
 }
