@@ -5,6 +5,14 @@ M.general = {
   n = {
     ["<C-c>"] = { "<ESC>" },
     ["x"] = { '"_x' },
+    ["<leader>c+"] = {
+      function()
+        local current_file = tostring(vim.fn.expand "%")
+        if string.match(current_file, "%.cpp$") or string.match(current_file, "%.cxx$") then
+          vim.cmd "!g++ --debug %"
+        end
+      end,
+    },
     -- toggle transparency
     ["<leader>tt"] = {
       function()
