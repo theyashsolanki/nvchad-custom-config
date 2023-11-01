@@ -55,7 +55,6 @@ local plugins = {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
-
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = overrides.blankline,
@@ -155,10 +154,25 @@ local plugins = {
     lazy = false,
   },
 
+  --  dap stuff here
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = {
+      {
+        "mfussenegger/nvim-dap",
+        config = function()
+          require("core.utils").load_mappings "dap"
+          require "custom.configs.nvim-dap"
+        end,
+      },
+      {
+        "theHamsta/nvim-dap-virtual-text",
+        config = function()
+          require("nvim-dap-virtual-text").setup()
+        end,
+      },
+    },
     config = function()
       local dap = require "dap"
       local dapui = require "dapui"
@@ -172,25 +186,6 @@ local plugins = {
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-    end,
-  },
-
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap",
-    },
-    opts = {
-      handlers = {},
-    },
-  },
-
-  {
-    "mfussenegger/nvim-dap",
-    config = function()
-      require("core.utils").load_mappings "dap"
     end,
   },
 
