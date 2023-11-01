@@ -25,8 +25,8 @@ local sources = {
 
   -- python
   b.formatting.black,
-  b.diagnostics.mypy,
-  b.diagnostics.ruff,
+  -- b.diagnostics.mypy,
+  -- b.diagnostics.ruff,
 
   -- golang
   b.formatting.gofumpt,
