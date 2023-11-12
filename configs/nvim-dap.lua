@@ -24,6 +24,35 @@ dap.adapters.python = function(cb, config)
     }
   end
 end
+
+require("dap").adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    -- 💀 Make sure to update this path to point to your installation
+    args = { "/home/yash/.config/js-debug/src/dapDebugServer.js", "${port}" },
+  },
+}
+
+dap.configurations.typescript = {
+  {
+    type = "pwa-node",
+    request = "launch",
+    name = "Launch file",
+    runtimeExecutable = "deno",
+    runtimeArgs = {
+      "run",
+      "--inspect-wait",
+      "--allow-all",
+    },
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+    attachSimplePort = 9229,
+  },
+}
+dap.configurations.javascript = dap.configurations.typescript
 dap.adapters.lldb = {
   type = "executable",
   command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path
