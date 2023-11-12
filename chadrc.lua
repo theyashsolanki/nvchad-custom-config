@@ -20,6 +20,16 @@ M.ui = {
   vim.cmd "hi def IlluminatedWordWrite gui=NONE guibg=#2E3440",
   vim.cmd "hi def IlluminatedWordRead gui=NONE guibg=#2E3440",
 
+  vim.cmd [[
+     set nocompatible
+     filetype plugin on
+     syntax on
+  ]],
+  vim.cmd [[
+       let g:vimwiki_list = [{'path': '~/personal/vimwiki/',
+       \ }]
+       let g:vimwiki_global_ext = 0
+  ]],
   -- highlight yanked text
   vim.cmd [[
   augroup YankHighlight

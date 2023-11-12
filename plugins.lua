@@ -223,6 +223,12 @@ local plugins = {
       }
     end,
   },
+
+  {
+    "vimwiki/vimwiki",
+    lazy = false,
+    config = function() end,
+  },
 }
 
 return plugins
