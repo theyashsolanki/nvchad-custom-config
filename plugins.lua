@@ -95,6 +95,12 @@ local plugins = {
     dependencies = { "kevinhwang91/promise-async" },
     opts = overrides.ufo,
   },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
+
   {
     "nvim-telescope/telescope-ui-select.nvim",
     event = "VeryLazy",
@@ -166,12 +172,12 @@ local plugins = {
           require "custom.configs.nvim-dap"
         end,
       },
-      {
-        "theHamsta/nvim-dap-virtual-text",
-        config = function()
-          require("nvim-dap-virtual-text").setup()
-        end,
-      },
+      -- {
+      --   "theHamsta/nvim-dap-virtual-text",
+      --   config = function()
+      --     require("nvim-dap-virtual-text").setup()
+      --   end,
+      -- },
     },
     config = function()
       local dap = require "dap"
