@@ -73,26 +73,6 @@ M.lspconfig = {
   },
 }
 
-M.telescope = {
-  n = {
-    --   ["<C-j>"] = {
-    --     function()
-    --       require("telescope.actions").move_selection_next()
-    --     end,
-    --   },
-    --   ["<C-l"] = {
-    --     function()
-    --       require("telescope.actions").preview_scrolling_right()
-    --     end,
-    --   },
-    --   ["<C-k>"] = {
-    --     function()
-    --       require("telescope.actions").move_selection_previous()
-    --     end,
-    --   },
-  },
-}
-
 M.gitsigns = {
   n = {
     ["<leader>sh"] = { "<cmd>Gitsigns stage_hunk<CR>" },
