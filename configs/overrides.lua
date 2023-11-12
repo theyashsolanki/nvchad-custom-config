@@ -44,8 +44,8 @@ M.mason = {
     "deno",
     "prettier",
     "tailwindcss-language-server",
-    "emmet-ls",
-    "eslint-lsp",
+    -- "emmet-ls",
+    -- "eslint-lsp",
     "json-lsp",
 
     -- shell stuff
@@ -56,7 +56,6 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
-    "lldb",
 
     -- python stuff
     "pyright",
@@ -182,4 +181,16 @@ M.ufo = {
   end,
 }
 
+M.telescope = {
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-j>"] = require("telescope.actions").move_selection_next,
+        ["<C-k>"] = require("telescope.actions").move_selection_previous,
+        -- ["<C-u>"] = require("telescope.actions").results_scrolling_up,
+        -- ["<C-d>"] = require("telescope.actions").results_scrolling_down,
+      },
+    },
+  },
+}
 return M
