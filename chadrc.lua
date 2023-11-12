@@ -11,7 +11,9 @@ M.ui = {
   lsp_semantic_tokens = true,
   hl_override = highlights.override,
   hl_add = highlights.add,
-
+  tabufline = {
+    enabled = false,
+  },
   -- indent line
   vim.cmd [[highlight IndentBlanklineContextChar guifg=#9D7CD8 gui=nocombine]],
   vim.cmd "hi def IlluminatedWordText guibg=#2E3440 gui=NONE",
