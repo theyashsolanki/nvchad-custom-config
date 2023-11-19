@@ -62,9 +62,9 @@ M.override = {
   ["@parameter"] = {
     fg = "white",
   },
-  DiffAdd = {
-    fg = "#08A04B",
-  },
+  -- DiffAdd = {
+  --   fg = "#08A04B",
+  -- },
   --
   -- ["@variable.builtin"] = {
   --   fg = "#f92672",

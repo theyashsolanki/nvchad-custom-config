@@ -10,19 +10,39 @@ local plugins = {
     dependencies = {
       -- format & linting
       {
-        "jose-elias-alvarez/null-ls.nvim",
+        "stevearc/conform.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("conform").setup {
+            formatters_by_ft = {
+              lua = { "stylua" },
+              -- Conform will run multiple formatters sequentially
+              python = { "isort", "black" },
+              -- Use a sub-list to run only the first available formatter
+              javascript = { "prettier" },
+              typescript = { "prettier" },
+              typescriptreact = { "prettier" },
+              javascriptreact = { "prettier" },
+              json = { "prettier" },
+              yaml = { "prettier" },
+              html = { "prettier" },
+              css = { "prettier" },
+              markdown = { "prettier" },
+              graphql = { "prettier" },
+              cpp = { "clang-format" },
+              go = { "goimports-reviser", "gofumpt" },
+            },
+
+            format_on_save = {
+              -- These options will be passed to conform.format()
+              timeout_ms = 500,
+              lsp_fallback = true,
+            },
+          }
         end,
       },
+
       {
-        "nvimdev/lspsaga.nvim",
-        -- branch = "main",
-        event = "LspAttach",
-        config = function()
-          require "custom.configs.lspsaga"
-        end,
-        dependencies = { { "nvim-tree/nvim-web-devicons" } },
+        "nvim-tree/nvim-web-devicons",
       },
     },
     config = function()
@@ -172,12 +192,6 @@ local plugins = {
           require "custom.configs.nvim-dap"
         end,
       },
-      -- {
-      --   "theHamsta/nvim-dap-virtual-text",
-      --   config = function()
-      --     require("nvim-dap-virtual-text").setup()
-      --   end,
-      -- },
     },
     config = function()
       local dap = require "dap"
@@ -228,6 +242,39 @@ local plugins = {
     "vimwiki/vimwiki",
     lazy = false,
     config = function() end,
+  },
+
+  {
+    "goolord/alpha-nvim",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end,
+  },
+
+  {
+    "stevearc/dressing.nvim",
+    lazy = false,
+    opts = {},
+  },
+
+  {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require("lspsaga").setup {
+        ui = { devicons = true },
+        lightbulb = {
+          enable_in_insert = false,
+        },
+        rename = {
+          keys = {
+            quit = "<C-c>",
+          },
+        },
+      }
+    end,
   },
 }
 

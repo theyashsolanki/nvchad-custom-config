@@ -19,6 +19,7 @@ M.treesitter = {
   },
   indent = {
     enable = true,
+
     -- disable = {
     --   "python"
     -- },
@@ -60,6 +61,7 @@ M.mason = {
     -- python stuff
     "pyright",
     "black",
+    "isort",
 
     -- Golang
     "gopls",

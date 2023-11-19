@@ -59,17 +59,17 @@ M.lspconfig = {
     ["<leader>ra"] = { "<cmd>Lspsaga rename<CR>", "lspsaga rename" },
     ["<leader>d"] = { "<cmd>Lspsaga show_line_diagnostics<CR>" },
     ["<leader>D"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
-    ["gr"] = { "<cmd>Lspsaga finder<CR>", "lspsaga refrences" },
+    -- ["gr"] = { "<cmd>Lspsaga finder<CR>", "lspsaga refrences" },
     ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "lspsaga outline" },
-    ["K"] = { "<cmd>Lspsaga hover_doc<CR>" },
-    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>" },
+    ["K"] = { "<cmd>Lspsaga hover_doc<CR>", "lspsaga hover_doc" },
+    ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "lspsaga code_action" },
     -- ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
-    ["<leader>hh"] = {
-      function()
-        vim.lsp.inlay_hint(0, nil)
-      end,
-      "Toggle Inlay Hints",
-    },
+    -- ["<leader>hh"] = {
+    --   function()
+    --     vim.lsp.inlay_hint(0, nil)
+    --   end,
+    --   "Toggle Inlay Hints",
+    -- },
   },
 }
 
