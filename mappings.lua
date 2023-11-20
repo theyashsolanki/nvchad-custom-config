@@ -59,16 +59,26 @@ M.lspconfig = {
     ["<leader>ra"] = { "<cmd>Lspsaga rename<CR>", "lspsaga rename" },
     ["<leader>d"] = { "<cmd>Lspsaga show_line_diagnostics<CR>" },
     ["<leader>D"] = { "<cmd>Lspsaga show_cursor_diagnostics<CR>" },
-    -- ["gr"] = { "<cmd>Lspsaga finder<CR>", "lspsaga refrences" },
+    ["gf"] = { "<cmd>Lspsaga finder<CR>", "lspsaga refrences" },
     ["<leader>o"] = { "<cmd>Lspsaga outline<CR>", "lspsaga outline" },
     ["K"] = { "<cmd>Lspsaga hover_doc<CR>", "lspsaga hover_doc" },
     ["<leader>ca"] = { "<cmd>Lspsaga code_action<CR>", "lspsaga code_action" },
     -- ["<leader>pr"] = { "<cmd>Lspsaga rename ++project<CR>" },
-    -- ["<leader>hh"] = {
+
+    -- ["<leader>d"] = {
     --   function()
-    --     vim.lsp.inlay_hint(0, nil)
+    --     vim.diagnostic.open_float { border = "rounded" }
     --   end,
-    --   "Toggle Inlay Hints",
+    --   "Floating diagnostic",
+    -- },
+    ["<leader>ic"] = { "<cmd>Telescope lsp_incoming_calls<CR>", "Telescope incoming calls", opts = { noremap = true } },
+    ["<leader>oc"] = { "<cmd>Telescope lsp_outgoing_calls<CR>", "Telescope outgoing calls" },
+    ["gr"] = { "<cmd>Telescope lsp_references<CR>", "Telescope lsp refrences", opts = { noremap = true } },
+    -- ["<leader>ca"] = {
+    --   function()
+    --     vim.lsp.buf.code_action()
+    --   end,
+    --   "LSP code action",
     -- },
   },
 }
