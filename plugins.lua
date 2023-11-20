@@ -18,25 +18,34 @@ local plugins = {
               -- Conform will run multiple formatters sequentially
               python = { "isort", "black" },
               -- Use a sub-list to run only the first available formatter
-              javascript = { "prettier" },
-              typescript = { "prettier" },
+              javascript = { "deno_fmt" },
+              typescript = { "deno_fmt" },
               typescriptreact = { "prettier" },
               javascriptreact = { "prettier" },
               json = { "prettier" },
               yaml = { "prettier" },
-              html = { "prettier" },
+              html = { "htmlbeautifier", "rustywind" },
               css = { "prettier" },
               markdown = { "prettier" },
               graphql = { "prettier" },
               cpp = { "clang-format" },
               go = { "goimports-reviser", "gofumpt" },
             },
-
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              pattern = "*",
+              callback = function(args)
+                require("conform").format { bufnr = args.buf }
+              end,
+            }),
             format_on_save = {
               -- These options will be passed to conform.format()
-              timeout_ms = 500,
+              async = true,
               lsp_fallback = true,
             },
+
+            vim.keymap.set({ "n", "v" }, "<leader>fm", function()
+              require("conform").format()
+            end),
           }
         end,
       },
@@ -62,6 +71,12 @@ local plugins = {
     dependencies = {
       { "JoosepAlviste/nvim-ts-context-commentstring", ft = "javascriptreact" },
       "windwp/nvim-ts-autotag",
+      {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        config = function()
+          require "custom.configs.treesitter-textobjects"
+        end,
+      },
     },
     opts = overrides.treesitter,
   },
@@ -175,10 +190,10 @@ local plugins = {
     end,
   },
 
-  {
-    "tpope/vim-obsession",
-    lazy = false,
-  },
+  -- {
+  --   "tpope/vim-obsession",
+  --   lazy = false,
+  -- },
 
   --  dap stuff here
   {
@@ -259,19 +274,69 @@ local plugins = {
     opts = {},
   },
 
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   lazy = false,
+  --   name = "barbecue",
+  --   version = "*",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic",
+  --     "nvim-tree/nvim-web-devicons", -- optional dependency
+  --   },
+  --   config = function()
+  --     require("barbecue").setup {
+  --       theme = {
+  --         dirname = { fg = "#468499" },
+  --         basename = { fg = "#468499" },
+  --       },
+  --       show_dirname = false,
+  --       show_modified = true,
+  --       symbols = {
+  --         modified = "●",
+  --         ellipsis = "…",
+  --         separator = "",
+  --       },
+  --       modifiers = {
+  --         ---Filename modifiers applied to dirname.
+  --         ---
+  --         ---See: `:help filename-modifiers`
+  --         ---
+  --         ---@type string
+  --         dirname = ":~:.",
+  --
+  --         ---Filename modifiers applied to basename.
+  --         ---
+  --         ---See: `:help filename-modifiers`
+  --         ---
+  --         ---@type string
+  --         basename = "",
+  --       },
+  --       -- kinds = {
+  --       --   String = false,
+  --       -- },
+  --     }
+  --   end,
+  -- },
   {
     "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
+    lazy = false,
     config = function()
       require("lspsaga").setup {
-        ui = { devicons = true },
+        hover = {
+          open_link = "<CR>",
+          open_cmd = "!firefox",
+        },
         lightbulb = {
-          enable_in_insert = false,
+          enable = false,
+          -- enable_in_insert = false,
         },
         rename = {
           keys = {
             quit = "<C-c>",
           },
+        },
+        finder = {
+          default = "ref",
         },
       }
     end,
