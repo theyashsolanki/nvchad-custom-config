@@ -31,15 +31,9 @@ local plugins = {
               cpp = { "clang-format" },
               go = { "goimports-reviser", "gofumpt" },
             },
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              pattern = "*",
-              callback = function(args)
-                require("conform").format { bufnr = args.buf }
-              end,
-            }),
             format_on_save = {
               -- These options will be passed to conform.format()
-              async = true,
+              timeout_ms = 500,
               lsp_fallback = true,
             },
 
