@@ -30,6 +30,16 @@ M.treesitter = {
   highlight = {
     enable = true,
   },
+
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "<C-space>",
+      node_incremental = "<C-space>",
+      scope_incremental = false,
+      node_decremental = "<bs>",
+    },
+  },
 }
 
 M.mason = {
@@ -45,7 +55,7 @@ M.mason = {
     "deno",
     "prettier",
     "tailwindcss-language-server",
-    -- "emmet-ls",
+    "emmet-ls",
     -- "eslint-lsp",
     "json-lsp",
 
