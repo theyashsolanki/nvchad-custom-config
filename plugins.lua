@@ -268,49 +268,6 @@ local plugins = {
     opts = {},
   },
 
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   lazy = false,
-  --   name = "barbecue",
-  --   version = "*",
-  --   dependencies = {
-  --     "SmiteshP/nvim-navic",
-  --     "nvim-tree/nvim-web-devicons", -- optional dependency
-  --   },
-  --   config = function()
-  --     require("barbecue").setup {
-  --       theme = {
-  --         dirname = { fg = "#468499" },
-  --         basename = { fg = "#468499" },
-  --       },
-  --       show_dirname = false,
-  --       show_modified = true,
-  --       symbols = {
-  --         modified = "●",
-  --         ellipsis = "…",
-  --         separator = "",
-  --       },
-  --       modifiers = {
-  --         ---Filename modifiers applied to dirname.
-  --         ---
-  --         ---See: `:help filename-modifiers`
-  --         ---
-  --         ---@type string
-  --         dirname = ":~:.",
-  --
-  --         ---Filename modifiers applied to basename.
-  --         ---
-  --         ---See: `:help filename-modifiers`
-  --         ---
-  --         ---@type string
-  --         basename = "",
-  --       },
-  --       -- kinds = {
-  --       --   String = false,
-  --       -- },
-  --     }
-  --   end,
-  -- },
   {
     "nvimdev/lspsaga.nvim",
     lazy = false,

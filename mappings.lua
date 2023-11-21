@@ -115,15 +115,15 @@ M.dap = {
   },
 }
 
-M.nvimtree = {
-  n = {
-    ["<C-s>"] = {
-      function()
-        require("nvim-tree.api").node.open.vertical()
-      end,
-      "open file in vertical split",
-    },
-  },
-}
+-- M.nvimtree = {
+--   n = {
+--     ["<C-s>"] = {
+--       function()
+--         require("nvim-tree.api").node.open.vertical()
+--       end,
+--       "open file in vertical split",
+--     },
+--   },
+-- }
 
 return M
